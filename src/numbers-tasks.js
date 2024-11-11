@@ -284,11 +284,12 @@ function getSumToN(n) {
  *   5   => 5  // 5
  */
 function getSumOfDigits(num) {
-  const ch = String(num).split('');
+  let ch = String(num);
+  ch = ch.split('');
   let sum = 0;
   for (let i = 0; i < ch.length; i += 1) {
-    if (typeof (ch[i] === 'number')) {
-      sum += +ch[i];
+    if (!Number.isNaN(ch[i]) && ch[i] !== ' ') {
+      sum += Number(ch[i]);
     }
   }
   return sum;
