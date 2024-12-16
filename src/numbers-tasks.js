@@ -68,8 +68,9 @@ function getAverage(value1, value2) {
  *   (0,0) (1,0)    => 1
  *   (-5,0) (10,-10) => 18.027756377319946
  */
-function getDistanceBetweenPoints(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
+function getDistanceBetweenPoints(x1, y1, x2, y2) {
+  const dist = Math.sqrt((y2 - y1) ** 2 + (x2 - x1) ** 2);
+  return dist;
 }
 
 /**
@@ -200,8 +201,13 @@ function roundToPowerOfTen(num, pow) {
  *   17 => true
  */
 
-function isPrime(/* n */) {
-  throw new Error('Not implemented');
+function isPrime(n) {
+  for (let i = 2; i <= Math.sqrt(n); i += 1) {
+    if (n % i === 0) {
+      return false;
+    }
+  }
+  return true;
 }
 
 /**
